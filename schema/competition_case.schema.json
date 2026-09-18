@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/xiaoluojiu/MathModel-KnowledgeBase/blob/main/schema/competition_case.schema.json",
+  "title": "Mathematical Modeling Competition Case",
+  "type": "object",
+  "required": ["id", "contest", "year", "problem", "problem_profile", "modeling_patterns", "source"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+    "contest": {"type": "string"},
+    "year": {"type": "integer"},
+    "problem": {"type": "string"},
+    "award_context": {"type": "string"},
+    "problem_profile": {
+      "type": "object",
+      "properties": {
+        "problem_types": {"type": "array", "items": {"type": "string"}},
+        "data_types": {"type": "array", "items": {"type": "string"}},
+        "patterns": {"type": "array", "items": {"type": "string"}},
+        "outputs": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "modeling_patterns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "model_family"],
+        "properties": {
+          "role": {"type": "string"},
+          "model_family": {"type": "string"},
+          "candidate_models": {"type": "array", "items": {"type": "string"}},
+          "selection_evidence": {"type": "array", "items": {"type": "string"}},
+          "alternatives": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "lessons_for_ai": {"type": "array", "items": {"type": "string"}},
+    "source": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
