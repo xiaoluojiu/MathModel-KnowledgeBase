@@ -3,7 +3,7 @@
   "$id": "https://github.com/xiaoluojiu/MathModel-KnowledgeBase/blob/main/schema/model.schema.json",
   "title": "MathModel Model Card",
   "type": "object",
-  "required": ["id", "name", "summary", "tags", "applicability", "limitations", "relations"],
+  "required": ["id", "name", "summary", "family", "tags", "applicability", "limitations", "relations"],
   "properties": {
     "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
     "name": {"type": "string"},
@@ -25,7 +25,10 @@
         "philosophy": {"type": "array", "items": {"type": "string"}},
         "output": {"type": "array", "items": {"type": "string"}},
         "prerequisites": {"type": "array", "items": {"type": "string"}},
-        "competition": {"type": "array", "items": {"type": "string"}}
+        "competition": {"type": "array", "items": {"type": "string"}},
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "risks": {"type": "array", "items": {"type": "string"}},
+        "interpretability": {"type": "array", "items": {"type": "string"}}
       },
       "additionalProperties": false
     },
@@ -47,7 +50,8 @@
           "name": {"type": "string"},
           "description": {"type": "string"},
           "selection": {"type": "string"}
-        }
+        },
+        "additionalProperties": false
       }
     },
     "validation": {"type": "array", "items": {"type": "string"}},
@@ -61,7 +65,8 @@
         "formula": {"type": "string"},
         "parameter": {"type": "string"},
         "feature": {"type": "string"}
-      }
+      },
+      "additionalProperties": false
     },
     "relations": {
       "type": "object",
