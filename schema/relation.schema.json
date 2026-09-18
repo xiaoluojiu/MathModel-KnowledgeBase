@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MathModel Knowledge Relation",
+  "type": "object",
+  "required": ["source", "relation", "target"],
+  "properties": {
+    "source": {"type": "string"},
+    "relation": {
+      "type": "string",
+      "enum": [
+        "solves",
+        "requires",
+        "suitable_for",
+        "alternative_to",
+        "variant_of",
+        "extension_of",
+        "generalization_of",
+        "special_case_of",
+        "complementary_to",
+        "hybrid_with",
+        "ensemble_with",
+        "preprocessing_for",
+        "diagnostic_for"
+      ]
+    },
+    "target": {"type": "string"},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": false
+}
