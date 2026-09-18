@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MathModel Retrieval Query and Result",
+  "type": "object",
+  "properties": {
+    "query": {"type": "string"},
+    "problem_profile": {"$ref": "problem.schema.json"},
+    "data_profile": {"$ref": "data.schema.json"},
+    "candidate_models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["model_id", "matched_tags", "evidence"],
+        "properties": {
+          "model_id": {"type": "string"},
+          "matched_tags": {"type": "array", "items": {"type": "string"}},
+          "hard_matches": {"type": "array", "items": {"type": "string"}},
+          "soft_matches": {"type": "array", "items": {"type": "string"}},
+          "negative_matches": {"type": "array", "items": {"type": "string"}},
+          "evidence": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "model_collision": {"type": "string"},
+    "primary_model": {"type": "string"},
+    "secondary_model": {"type": ["string", "null"]},
+    "uncertainties": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
