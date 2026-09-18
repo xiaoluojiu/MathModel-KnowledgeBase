@@ -38,6 +38,7 @@ AI：形成建模方案
 6. **Composable**：支持替代模型、扩展模型、互补模型和混合建模流程。
 7. **可验证**：每个模型逐步补充来源、公式、适用边界、案例和实现。
 8. **Case-grounded**：使用历届竞赛题目、官方结果和可合法引用的获奖/优秀论文作为案例证据，但不把获奖模型机械视为普适最优模型。
+9. **Source-aware**：严格区分官方证据、获奖论文证据、作者代码证据、二次资料和推断标签。
 
 ## 目录
 
@@ -48,13 +49,20 @@ AI：形成建模方案
 - `retrieval/`：检索与匹配组件
 - `prompt_templates/`：AI 分析与 Prompt 生成规范
 - `examples/`：完整检索与建模示例
-- `docs/`：架构、标签体系、贡献规范
+- `docs/`：架构、标签体系、贡献规范与论文抽取协议
 
 ## 竞赛案例知识
 
-`knowledge/competition_patterns/` 专门保存数学建模竞赛案例的**结构化建模模式**。案例来源包括 COMAP MCM/ICM、全国大学生数学建模竞赛等公开竞赛资源。
+`knowledge/competition_patterns/` 专门保存数学建模竞赛案例的**结构化建模模式**。
 
-案例知识优先保存：题目类型、数据模式、子问题结构、模型角色、候选模型族、选择证据、验证方式、替代方案以及可迁移的建模经验；完整论文仅在明确允许再分发时进入仓库。
+目前已经建立 CUMCM 2010–2025 A/B 题总索引，并开始对公开可核验的优秀/获奖论文、专家讲评和作者代码进行深度抽取。案例知识优先保存：题目类型、数据模式、子问题结构、模型角色、候选模型族、选择证据、验证方式、替代方案以及可迁移的建模经验；完整论文仅在明确允许再分发时进入仓库。
+
+重点文档：
+
+- `knowledge/competition_cases/cumcm_2010_2025_ab_index.md`
+- `knowledge/competition_cases/verified_cases_2019_2025_ab.md`
+- `relations/competition_model_edges/cumcm_ab_edges.md`
+- `docs/paper_extraction_protocol.md`
 
 ## AI 接入
 
@@ -62,7 +70,7 @@ AI 接入本仓库后，应优先阅读 [`AI_QUICK_START.md`](AI_QUICK_START.md)
 
 ## 当前阶段
 
-当前版本优先建设**知识底座与标签体系**，随后以高频数学建模模型建立第一批高质量 Model Cards，再实现本地 CLI / Python 检索器以及 MCP / API 接口。
+当前版本优先建设**知识底座、标签体系、竞赛案例图谱和模型关系图**，随后实现本地 CLI / Python 检索器以及 MCP / API 接口。
 
 ## License
 
