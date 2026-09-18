@@ -1,6 +1,6 @@
 # Model Registry
 
-This registry is the human-readable entry point to the model knowledge base. It is intentionally organized by modeling role rather than only by software library.
+This registry is the human-readable entry point to the model knowledge base. It is organized by modeling role rather than only by software library.
 
 ## Current catalog
 
@@ -18,6 +18,20 @@ This registry is the human-readable entry point to the model knowledge base. It 
 | PCA | dimensionality reduction | reduction, feature extraction | correlated features, continuous variables |
 | ARIMA | time series | forecasting | autocorrelation, trend/nonstationarity |
 | SARIMAX | time series | forecasting | seasonality, autocorrelation, exogenous variables |
+| AHP | multi-criteria decision | evaluation, ranking | pairwise preferences, hierarchy |
+| TOPSIS | multi-criteria decision | evaluation, ranking | benefit/cost indicators |
+| Entropy Weight | objective weighting | weighting, evaluation | indicator dispersion |
+| CRITIC | objective weighting | weighting, evaluation | dispersion, indicator correlation |
+| GM(1,1) | grey system | short-term forecasting | small samples, trend |
+| Linear Programming | optimization | allocation, planning | linear objectives/constraints |
+| Integer Programming | optimization | assignment, selection, scheduling | discrete decisions |
+| Dynamic Programming | combinatorial optimization | sequential decisions | optimal substructure |
+| Genetic Algorithm | evolutionary optimization | nonlinear/combinatorial optimization | nonconvex, multimodal |
+| Particle Swarm Optimization | swarm intelligence | continuous optimization | nonconvex, multimodal |
+| Simulated Annealing | metaheuristic | combinatorial/continuous optimization | rugged nonconvex search |
+| Dijkstra | graph algorithm | shortest path | weighted graph, nonnegative edges |
+| Floyd–Warshall | graph algorithm | all-pairs shortest path | weighted graph |
+| Monte Carlo | stochastic simulation | uncertainty, risk, simulation | random inputs, stochastic systems |
 
 ## Planned core families
 
