@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MathModel Problem Profile",
+  "type": "object",
+  "required": ["problem_id", "problem_types", "tasks", "objectives", "constraints"],
+  "properties": {
+    "problem_id": {"type": "string"},
+    "problem_types": {"type": "array", "items": {"type": "string"}},
+    "tasks": {"type": "array", "items": {"type": "string"}},
+    "objectives": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "decision_variables": {"type": "array", "items": {"type": "string"}},
+    "target_variables": {"type": "array", "items": {"type": "string"}},
+    "outputs": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "uncertainties": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
