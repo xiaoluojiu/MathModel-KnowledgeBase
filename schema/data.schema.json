@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MathModel Data Profile",
+  "type": "object",
+  "required": ["data_id", "source_type", "dimensions", "features"],
+  "properties": {
+    "data_id": {"type": "string"},
+    "source_type": {"type": "array", "items": {"type": "string"}},
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "rows": {"type": ["integer", "null"]},
+        "columns": {"type": ["integer", "null"]}
+      }
+    },
+    "features": {"type": "array", "items": {"type": "string"}},
+    "patterns": {"type": "array", "items": {"type": "string"}},
+    "quality": {
+      "type": "object",
+      "properties": {
+        "missing": {"type": "string"},
+        "outliers": {"type": "string"},
+        "duplicates": {"type": "string"},
+        "imbalance": {"type": "string"}
+      }
+    },
+    "preprocessing": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
