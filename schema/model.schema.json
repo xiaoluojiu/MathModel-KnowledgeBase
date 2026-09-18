@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/xiaoluojiu/MathModel-KnowledgeBase/blob/main/schema/model.schema.json",
+  "title": "MathModel Model Card",
+  "type": "object",
+  "required": ["id", "name", "summary", "tags", "applicability", "limitations", "relations"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]*$"},
+    "name": {"type": "string"},
+    "aliases": {"type": "array", "items": {"type": "string"}},
+    "summary": {"type": "string"},
+    "family": {"type": "string"},
+    "tags": {
+      "type": "object",
+      "properties": {
+        "problem": {"type": "array", "items": {"type": "string"}},
+        "task": {"type": "array", "items": {"type": "string"}},
+        "data": {"type": "array", "items": {"type": "string"}},
+        "pattern": {"type": "array", "items": {"type": "string"}},
+        "structure": {"type": "array", "items": {"type": "string"}},
+        "scale": {"type": "array", "items": {"type": "string"}},
+        "objective": {"type": "array", "items": {"type": "string"}},
+        "constraints": {"type": "array", "items": {"type": "string"}},
+        "mathematics": {"type": "array", "items": {"type": "string"}},
+        "philosophy": {"type": "array", "items": {"type": "string"}},
+        "output": {"type": "array", "items": {"type": "string"}},
+        "prerequisites": {"type": "array", "items": {"type": "string"}},
+        "competition": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "applicability": {
+      "type": "object",
+      "properties": {
+        "hard_match": {"type": "array", "items": {"type": "string"}},
+        "soft_match": {"type": "array", "items": {"type": "string"}},
+        "negative_match": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "description"],
+        "properties": {
+          "name": {"type": "string"},
+          "description": {"type": "string"},
+          "selection": {"type": "string"}
+        }
+      }
+    },
+    "validation": {"type": "array", "items": {"type": "string"}},
+    "strengths": {"type": "array", "items": {"type": "string"}},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "risks": {"type": "array", "items": {"type": "string"}},
+    "interpretation": {
+      "type": "object",
+      "properties": {
+        "overall": {"type": "string"},
+        "formula": {"type": "string"},
+        "parameter": {"type": "string"},
+        "feature": {"type": "string"}
+      }
+    },
+    "relations": {
+      "type": "object",
+      "additionalProperties": {"type": "array", "items": {"type": "string"}}
+    },
+    "references": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
